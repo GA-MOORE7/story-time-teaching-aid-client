@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Sentence</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="module" src="js/toggle-element.js" defer></script>
+    <script type="module" src="js/splitTextDisplay.js" defer></script>
+    <script type="module" src="js/slide-show.js" defer></script>
+    <script type="module" src="js/quizThumbnails.js" defer></script>
+</head>
+<body>
+    <div id="thumbnails-container">
+    </div>
+    
+    <!-- Navigation buttons should be outside the slides container -->
+    <div id="slideshow-nav">
+        <button id="prev-slide" class="prev">&#10094;</button >
+        <button id="next-slide" class="next">&#10095;</button >
+    </div>
+    
+    <div class="slideshow" id="slideshow">
+        <!-- Slides will be dynamically added here -->
+    </div>
+</body>
+</html>
+
+
