@@ -91,7 +91,7 @@ body {
   .sentence {
    color: white;
    text-decoration: none;
-    border-bottom: 3px solid black; /* Create an underline */
+    border-bottom: 3px solid rgb(223, 159, 159); /* Create an underline */
     padding-bottom: 5px; /* Increase space */
     line-height: 1.5;
   }
@@ -99,9 +99,10 @@ body {
   .word {
     color: white;
    text-decoration: none;
-    border-bottom: 3px solid black; /* Create an underline */
+    border-bottom: 3px solid rgb(223, 159, 159); /* Create an underline */
     padding-bottom: 5px; /* Increase space */
     line-height: 1.5;
+    margin-right: 12px;
   }
    
   .letter {
@@ -109,7 +110,7 @@ body {
    text-decoration: none;
     margin-right: 8px;
     cursor: pointer;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgb(223, 159, 159);
     padding-bottom: 5px;
     line-height: 1.5;
   }
@@ -170,7 +171,6 @@ body {
     display: none; 
     text-align: center;
     transition: opacity 0.6s ease; 
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,7 +201,7 @@ body {
   text-decoration: none;
   z-index: 9999; /* Ensure the buttons are on top */
   width: 50px;   /* Ensure width */
-  height: 100px;  /* Ensure height */
+  height: 80px;  /* Ensure height */
   display: flex;
   justify-content: center;
   align-items: center;  /* Center content */
@@ -214,7 +214,7 @@ body {
 /* Navigation container with proper positioning */
 #slideshow-nav {
   position: relative;
-  top: 50%;
+  top: 70%;
   width: 100%;
   display: flex;
   justify-content: space-between;
