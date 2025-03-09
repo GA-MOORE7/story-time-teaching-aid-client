@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchQuizzes() {
         try {
-            const response = await fetch("http://localhost:3000/api/quizzes-info");
+            const response = await fetch("https://arcane-savannah-49690-577a6c1c393a.herokuapp.com/api/quizzes-info");
             if (!response.ok) {
                 throw new Error("Failed to fetch quizzes");
             }
