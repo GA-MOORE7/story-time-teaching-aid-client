@@ -94,7 +94,7 @@ document.getElementById('quizForm').addEventListener('submit', (e) => {
     const quizData = getQuizData();
 
     // Send the data to the server (mocked for now)
-    fetch('http://localhost:3000/api/quizzes', {
+    fetch('https://arcane-savannah-49690-577a6c1c393a.herokuapp.com/api/quizzes', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

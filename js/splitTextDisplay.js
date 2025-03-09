@@ -4,7 +4,7 @@ export async function displayQuestions(quizId, index, container) {
     container.innerHTML = ""; // Clear existing content
 
     try {
-        const response = await fetch(`http://localhost:3000/api/quizzes/${quizId}`);
+        const response = await fetch(`https://arcane-savannah-49690-577a6c1c393a.herokuapp.com/api/quizzes/${quizId}`);
         if (!response.ok) {
             throw new Error("Failed to fetch quiz details");
         }

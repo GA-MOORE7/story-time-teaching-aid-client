@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (confirm("Are you sure you want to delete this quiz?")) {
                 try {
-                    const response = await fetch(`http://localhost:3000/api/quizzes/${quizId}`, {  // Add URL with quizId
+                    const response = await fetch(`https://arcane-savannah-49690-577a6c1c393a.herokuapp.com/api/quizzes/${quizId}`, {  // Add URL with quizId
                         method: "DELETE",  // Corrected method
                     });
 
