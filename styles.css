@@ -1,17 +1,17 @@
 body {
     /* background: #404040; */
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between; /* Adjusts spacing between boxes */
+    align-items: stretch; /* Makes boxes stretch to fill the height of the container */
+    height: 100vh; /* Makes the container fill the entire viewport height */
   }
   
-  .container {
-    margin: 30px auto;
-    padding: 40px 20px;
-    width: 600px;
-    background-color: rgba(255, 255, 255, 1); /* White */
-    text-align: center;
-    border-radius: 10px;
-    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
-  }
   
   h2 {
     color: #404040; /* Dark Gray */
@@ -91,18 +91,18 @@ body {
   .sentence {
    color: white;
    text-decoration: none;
-    border-bottom: 3px solid black; /* Create an underline */
+    border-bottom: 3px solid rgb(223, 159, 159); /* Create an underline */
     padding-bottom: 5px; /* Increase space */
     line-height: 1.5;
-    
   }
   
   .word {
     color: white;
    text-decoration: none;
-    border-bottom: 3px solid black; /* Create an underline */
+    border-bottom: 3px solid rgb(223, 159, 159); /* Create an underline */
     padding-bottom: 5px; /* Increase space */
     line-height: 1.5;
+    margin-right: 12px;
   }
    
   .letter {
@@ -110,7 +110,7 @@ body {
    text-decoration: none;
     margin-right: 8px;
     cursor: pointer;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgb(223, 159, 159);
     padding-bottom: 5px;
     line-height: 1.5;
   }
@@ -143,7 +143,7 @@ body {
   .slideshow {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 750px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -159,7 +159,6 @@ body {
     display: block; /* Display the active slide */
 }
 
-
   .slides.active {
     opacity: 1;  /* Make the active slide visible */
   }
@@ -167,12 +166,11 @@ body {
   /* Individual slides */
   .slides p {
     position: absolute;
-    width: 100%;
+    width:  100%;
     height: 100%;
     display: none; 
     text-align: center;
     transition: opacity 0.6s ease; 
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,7 +201,7 @@ body {
   text-decoration: none;
   z-index: 9999; /* Ensure the buttons are on top */
   width: 50px;   /* Ensure width */
-  height: 100px;  /* Ensure height */
+  height: 80px;  /* Ensure height */
   display: flex;
   justify-content: center;
   align-items: center;  /* Center content */
@@ -215,8 +213,8 @@ body {
 
 /* Navigation container with proper positioning */
 #slideshow-nav {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 70%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -248,13 +246,291 @@ body {
     
   }
 
-  .quiz-thumbnail {
-    display: inline-block;
+  #thumbnails-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 16px;
     padding: 20px;
-    margin: 10px;
-    background: #f4f4f4;
+}
+
+.quiz-thumbnail {
+    background: #d4e9ff;
     border-radius: 8px;
+    padding: 15px;
     text-align: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.quiz-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-thumbnail:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+  .box {
+    flex: 1;
+    min-width: 250px; /* Prevents boxes from becoming too narrow */
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #f9f9f9;
+    text-align: center;
   }
+
+  .box1, .box2, .box3 {
+    flex: 1;
+}
+
+/* 🔻 RESPONSIVE DESIGN: Stack boxes vertically when screen is narrower */
+@media screen and (max-width: 1000px) {
+  .container {
+      flex-direction: column; /* Makes boxes stack vertically */
+      align-items: center; /* Centers them */ 
+  }
+
+  .box3 {
+    margin-top: 250px; /* Adds 250px top margin to box3 only in column format */
+}
+
+  .box {
+      width: 90%; /* Makes them fill most of the screen width */
+      max-width: 400px; /* Prevents them from being too large */
+  }
+}
+
+  .box1 {
+    background-color: white;
+    margin-bottom: 5px;
+  }
+  .box2 {
+    background-color: white;
+    display: flex;                  /* Enables flexbox */
+    justify-content: center;        /* Centers content horizontally */
+    align-items: center;            /* Centers content vertically */
+    height: 100vh; 
+  }
+  
+  .box3 {
+    background-color: white;
+  }
+
+  .question {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between inputs and button */
+    margin-bottom: 15px; /* Adds vertical spacing between questions */
+}
+
+.question input {
+  flex: 1; /* Makes the input fields take up equal space */
+}
+
+.removeQuestion {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+  #quizBox {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .removeQuestion {
+    margin-left: auto; /* Push remove button to the right */
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+  button {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #3e8e41;
+    transform: scale(0.98);
+}
+
+/* Default Box3 Styling */
+.box3 {
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Fullscreen Mode for Box3 */
+.fullscreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw; /* 80% of the viewport width */
+  height: 80vh; /* 80% of the viewport height */
+  transform: translate(-50%, -50%); /* Center the lightbox */
+  background-color: white;
+  border: none;
+  z-index: 1002; /* Above the lightbox */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  max-width: 90vw; /* Ensure it doesn't exceed the viewport width */
+  max-height: 90vh; /* Ensure it doesn't exceed the viewport height */
+  overflow: auto; /* In case the content overflows */
+  padding: 20px; /* Padding for some space around content */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 1000px) {
+  .fullscreen {
+    width: 80vw; /* Make it take more space on smaller screens */
+    height: 80vh; /* Take more vertical space */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -80%); /* Ensure it remains centered */
+    max-width: 90vw; /* Ensure it doesn't exceed the viewport width */
+    max-height: 90vh; /* Ensure it doesn't exceed the viewport height */
+  }
+}
+
+/* Lightbox Background */
+#lightboxBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  display: none; /* Hidden initially */
+  z-index: 1000; /* Below fullscreen div */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Toggle Switch Styling */
+.switch-slideshow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch-slideshow input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(111, 180, 226);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.quiz-thumbnail {
+  position: relative; /* Set the position of the container to relative */
+}
+
+.delete-thumbnail {
+  position: absolute; /* Position it absolutely within the parent element */
+  top: 5px; /* Distance from the top */
+  right: 5px; /* Distance from the right */
+  background: none;
+  border: none;
+  color: #000000; /* Elegant red color */
+  font-size: 18px; /* Adjusted size of the X for a smaller button */
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Smooth color, opacity, and scaling transitions */
+  opacity: 0; /* Initially make the button invisible */
+  padding: 0; /* Remove any default padding */
+  width: 30px; /* Set a fixed width for the round button */
+  height: 30px; /* Set a fixed height to match the width */
+  border-radius: 50%; /* Make the button round */
+  display: flex; /* Use flexbox to center the "X" */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.quiz-thumbnail:hover .delete-thumbnail {
+  opacity: 1; /* Make the button visible on hover */
+}
+
+.delete-thumbnail:hover {
+  color: #C2185B; /* Darker red when hovered */
+  background-color: transparent; /* Ensure no background color on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Ensure the button color stays as expected even when hovered by other styles */
+button.delete-thumbnail:hover {
+  background-color: transparent; /* Make sure the background remains transparent */
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+
+  
+  
   

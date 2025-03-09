@@ -66,15 +66,22 @@ export async function displayQuestions(quizId, index, container) {
                     answerSpan.innerHTML = `<br><br><br>${wordsHTML}`;
                     answerSpan.classList.remove("hidden"); // Show words
                 } else if (selectedValue === "N") {
-                    const lettersHTML = q.answer
-                        .split("")
-                        .map(char => char === " "
-                            ? `<span class="letter-space" onclick="toggleVisibility(this)">&nbsp;</span>`
-                            : `<span class="letter" onclick="toggleVisibility(this)">${char}</span>`)
-                        .join("");
-                    answerSpan.innerHTML = `<br><br><br>${lettersHTML}`;
-                    answerSpan.classList.remove("hidden"); // Show letters
+                    const words = q.answer.split(" "); // Split sentence into words
+                    const wordsHTML = words
+                        .map(word => {
+                            // Wrap each letter inside a span, keeping words intact
+                            const lettersHTML = [...word]
+                                .map(char => `<span class="letter" onclick="toggleVisibility(this)">${char}</span>`)
+                                .join(""); // Join letters back together
+                
+                            return `<span class="word" style="border-bottom: 3px solid transparent;">${lettersHTML}</span>`; // Make word underline transparent
+                        })
+                        .join(" "); // Preserve spaces between words
+                
+                    answerSpan.innerHTML = `<br><br><br>${wordsHTML}`;
+                    answerSpan.classList.remove("hidden"); // Show the formatted answer
                 }
+                
             });
         });
 
