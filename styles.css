@@ -28,7 +28,7 @@ body {
   
   .switch {
     position: absolute; /* Use absolute positioning */
-    bottom: 20px; /* Position from the bottom */
+    bottom: -100px; /* Position from the bottom */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for the width of the switch */
     height: 32px;
@@ -214,7 +214,7 @@ body {
 /* Navigation container with proper positioning */
 #slideshow-nav {
   position: relative;
-  top: 70%;
+  top: 80%;
   width: 100%;
   display: flex;
   justify-content: space-between;
