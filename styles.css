@@ -91,7 +91,7 @@ body {
   .sentence {
    color: white;
    text-decoration: none;
-    border-bottom: 3px solid rgb(223, 159, 159); /* Create an underline */
+    border-bottom: 3px solid #1AB394; /* Create an underline */
     padding-bottom: 5px; /* Increase space */
     line-height: 1.5;
   }
@@ -99,7 +99,7 @@ body {
   .word {
     color: white;
    text-decoration: none;
-    border-bottom: 3px solid rgb(223, 159, 159); /* Create an underline */
+    border-bottom: 3px solid #f8ac59; /* Create an underline */
     padding-bottom: 5px; /* Increase space */
     line-height: 1.5;
     margin-right: 12px;
@@ -110,7 +110,7 @@ body {
    text-decoration: none;
     margin-right: 8px;
     cursor: pointer;
-    border-bottom: 3px solid rgb(223, 159, 159);
+    border-bottom: 3px solid #ed5565;
     padding-bottom: 5px;
     line-height: 1.5;
   }
@@ -424,7 +424,7 @@ button:active {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  background-color: rgba(171, 238, 255, 0.7); /* Dark overlay */
   display: none; /* Hidden initially */
   z-index: 1000; /* Below fullscreen div */
   transition: opacity 0.3s ease-in-out;
