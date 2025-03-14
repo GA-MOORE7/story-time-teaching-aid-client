@@ -27,7 +27,7 @@ body {
   
   
   .switch {
-    position: absolute; /* Use absolute positioning */
+    position: relative; /* Use absolute positioning */
     bottom: -100px; /* Position from the bottom */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for the width of the switch */
@@ -94,6 +94,7 @@ body {
     border-bottom: 3px solid #1AB394; /* Create an underline */
     padding-bottom: 5px; /* Increase space */
     line-height: 1.5;
+    font-size: 50px;
   }
   
   .word {
@@ -102,7 +103,8 @@ body {
     border-bottom: 3px solid #f8ac59; /* Create an underline */
     padding-bottom: 5px; /* Increase space */
     line-height: 1.5;
-    margin-right: 12px;
+    margin-right: 50px;
+    font-size: 50px;
   }
    
   .letter {
@@ -113,6 +115,7 @@ body {
     border-bottom: 3px solid #ed5565;
     padding-bottom: 5px;
     line-height: 1.5;
+    font-size: 50px;
   }
   
   .hidden {
@@ -149,6 +152,8 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 10; /* Ensures buttons stay on top */
+    overflow-y: auto; /* Enables vertical scrolling when needed */
+    max-height: 90vh; /* Prevents slideshow from getting too large */
   }
   
   .slides {
@@ -324,6 +329,7 @@ body {
     align-items: center;
     gap: 10px; /* Adds space between inputs and button */
     margin-bottom: 15px; /* Adds vertical spacing between questions */
+    font-size: 50px;
 }
 
 .question input {

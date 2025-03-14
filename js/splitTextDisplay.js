@@ -40,8 +40,8 @@ export async function displayQuestions(quizId, index, container) {
 
         // Create a unique toggle element
         const toggleElement = createToggleElement(index);
-        qaPair.appendChild(toggleElement);
         qaPair.appendChild(answerSpan);  // Only append answerSpan once
+        qaPair.appendChild(toggleElement);
         container.appendChild(qaPair);
 
         // Add event listeners for the radio buttons in this toggle element
