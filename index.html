@@ -11,6 +11,7 @@
     <script type="module" src="js/quizThumbnails.js" defer></script>
     <script type="module" src="js/addQuiz.js" defer></script>
     <script type="module" src="js/slideshow-enlarge-toggle.js" defer></script>
+    <script type="module" src="js/text-shortcut-toggle.js" defer></script>
 </head>
 <body>
 
@@ -49,30 +50,39 @@
     </div>
         </div>
         <div class="box box3" id="expandableBox3">
+
+            <!-- Toggle Switch for Fullscreen -->
+            <label class="switch-slideshow">
+                <input type="checkbox" id="toggleFullscreenBox3">
+                <span class="slider"></span>
+            </label>
+            
+            <!-- Slideshow Navigation Buttons -->
             <div id="slideshow-nav">
                 <button id="prev-slide" class="prev">&#10094;</button>
                 <button id="next-slide" class="next">&#10095;</button>
             </div>
         
-            <div class="slideshow" id="slideshow"  >
+            <!-- Slideshow Container -->
+            <div class="slideshow" id="slideshow">
                 <!-- Slides will be dynamically added here -->
-
-                
             </div>
         
-            <!-- Toggle Switch for fullscreen -->
-            <label class="switch-slideshow">
-                <input type="checkbox" id="toggleFullscreenBox3">
-                <span class="slider"></span>
+            <!-- Toggle Switch for Text Shortcut -->
+            <label class="textShortcut-switch">
+                <input type="checkbox" id="toggleTextShortcutBox3">
+                <span class="textShortcut-slider"></span>
             </label>
-
-            
+        
         </div>
+        
         
         <!-- Lightbox Background -->
         <div id="lightboxBackground"></div>
         
       </div>
+
+      
 
 
 
